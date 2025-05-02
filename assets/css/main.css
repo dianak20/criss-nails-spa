@@ -80,11 +80,11 @@
   Color que se aplica a los enlaces del menú de navegación principal cuando el usuario pasa el cursor sobre ellos (hover) o cuando están activos.
   Este es un tono amarillo cálido que resalta sobre el azul claro.
 */
-  --nav-mobile-background-color: #ffffff;  /* 
+  --nav-mobile-background-color: #223b51;  /* 
   Color de fondo para el menú de navegación en dispositivos móviles.
   En este caso, se utiliza blanco para asegurar que el menú de navegación sea limpio y legible en pantallas pequeñas.
 */
-  --nav-dropdown-background-color: #ffffff; /* 
+  --nav-dropdown-background-color: #223b51; /* 
   Color de fondo para los elementos desplegables (dropdown) dentro del menú de navegación.
   Al igual que el menú móvil, se usa blanco para que los elementos del menú se destaquen y sean fáciles de leer.
 */
