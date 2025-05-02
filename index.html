@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>🌸 Criss Nails 🌸</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="./assets/img/criss nails_logo.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+  <script type="text/javascript">
+    function valideKey(evt) {
+      // code is the decimal ASCII representation of the pressed key.
+      var code = evt.which ? evt.which : evt.keyCode;
+
+      if (code == 8) {
+        // backspace.
+        return true;
+      } else if (code >= 48 && code <= 57) {
+        // is a number.
+        return true;
+      } else {
+        // other keys.
+        return false;
+      }
+    }
+  </script>
+
+</head>
+
+<body class="index-page">
+
+  <!-- Encabezado de la pagina-->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">CrissNails</h1>
+        <span>.</span>
+      </a>
+         <!-- Barra de navegacion-->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#featured-services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+          
+        </ul>
+        <!-- Ícono de menú para dispositivos móviles -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!--Seccion de bienvenida -->
+    <section id="hero" class="hero section dark-background">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1>Bienvenido a nuestro Spa</h1>
+            <p>Haz de tu cuidado personal una prioridad</p>
+            
+            <!--Seccion de horarios de atencion-->
+            <div class="horarios-citas">
+              <h2>💇‍♀️ Horarios de Atención</h2>
+              <table class="horarios">
+                <tr><th>Día</th><th>Horario</th></tr>
+                <tr><td>Lunes a Viernes</td><td>9:00 AM - 7:00 PM</td></tr>
+                <tr><td>Sábados</td><td>10:00 AM - 5:00 PM</td></tr>
+                <tr><td>Domingos</td><td>Cerrado</td></tr>
+              </table>
+            </div>
+
+            <!--Formulario de reservas -->
+            <div class="formulario-reserva">
+              <label for="dia">Día:</label>
+              <select id="dia" required>
+                <option value="">Seleccionar...</option>
+                <option>Lunes</option>
+                <option>Martes</option>
+                <option>Miércoles</option>
+                <option>Jueves</option>
+                <option>Viernes</option>
+                <option>Sábado</option>
+              </select>
+            
+              <label for="hora">Hora:</label>
+              <input type="time" id="hora" required />
+            
+              <label for="servicios">Servicios:</label>
+              <select id="servicios" multiple size="4" required>
+                <option>Manicure tradicional</option>
+                <option>Manicure semipermanente</option>
+                <option>Limpieza Facial</option>
+                <option>Peluqueria</option>
+                <option>Uñas acrílicas</option>
+                <option>Masaje Relajante</option>
+                
+              </select>
+            
+              <div class="d-flex" style="margin-top: 1rem;">
+                <a 
+                  href="#" 
+                  id="btnWhatsApp"
+                  class="btn-get-started" 
+                  target="_blank"
+                  onclick="generarMensajeWhatsApp(event)">
+                  Reservar
+                </a>
+              </div>
+            </div>
+
+           
+            <script>
+               // Función que se ejecuta cuando se envía el formulario para generar el mensaje de WhatsApp
+              function generarMensajeWhatsApp(event) {
+               // Evita que el formulario se envíe y recargue la página
+                event.preventDefault();
+
+                // Obtiene el valor seleccionado en el campo "Día"
+                const dia = document.getElementById('dia').value;
+                
+                // Obtiene la hora ingresada en el campo de tipo "time"
+                const hora = document.getElementById('hora').value;
+                 // Obtiene todos los servicios seleccionados (opciones múltiples) y los convierte en una cadena separada por comas
+                const servicios = Array.from(document.getElementById('servicios').selectedOptions)
+                                       .map(opt => opt.value)// Obtiene el texto de cada opción
+                                       .join(', ');// Une los textos en una sola cadena
+            
+                // Valida que todos los campos estén completos
+                if (!dia || !hora || servicios.length === 0) {
+                  alert('Por favor, completa todos los campos.');// Muestra una alerta si falta información
+                  return;
+                }
+                // Crea el mensaje que se enviará por WhatsApp, incluyendo los valores del formulario
+                const mensaje = `Buen día, me gustaría agendar una cita en CrissNails. ¿Podrían confirmarme si tienen disponibilidad para el día ${dia} a las ${hora}? Estoy interesada en los siguientes servicios: ${servicios}. Agradezco de antemano su atención. Quedo atenta a su respuesta. 💅`;
+
+                 // Construye la URL de WhatsApp con el mensaje codificado para que sea válido en la URL
+                const url = `https://wa.me/573136636074?text=${encodeURIComponent(mensaje)}`;
+
+                // Abre una nueva ventana o pestaña con la URL de WhatsApp para enviar el mensaje
+                window.open(url, '_blank');
+              }
+            </script>
+
+            <!-- Foto con animacion del spa -->
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="./assets/img/fotospa.jpg" class="img-fluid animated" alt="">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!--Seccion de servicos -->
+    <section id="featured-services" class="featured-services section">
+
+      <!-- Titulo -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <p>¡Bienvenidos a nuestro salón de belleza! Nos complace ofrecerte una experiencia única de cuidado personal y bienestar. Nuestro equipo de profesionales está dedicado a brindarte los mejores servicios, desde cortes y peinados hasta tratamientos de belleza y relajación.!</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <!-- Fila con separación vertical entre columnas (gy-5 = gutter vertical) -->
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+
+            <!-- Primer servicio: Tratamiento Facial -->
+            <div class="service-item">
+              <div class="img">
+                <img src="./assets/img/Facial.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                  <h3>Facial</h3>
+                
+                <p>Tratamientos para limpiar, exfoliar e hidratar la piel del rostro, adaptados a sus necesidades específicas.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+           <!-- Segundo servicio: Masaje Corporal -->
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="img">
+                <img src="./assets/img/corporal.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                  <h3>Corporal</h3>
+                <p>Técnica que se utiliza la manipulación de los tejidos blandos del cuerpo para promover la relajación.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+           <!-- Tercer servicio: Manicure -->
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="./assets/img/manicura.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                  <h3>Manicure</h3>
+                </a>
+                <p>Cuidado y embellecimiento de las manos y pies, este proceso puede incluir limar, cortar y pulir las uñas.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+           <!-- Cuarto servicio: Peluqueria -->
+          <div class="col-xl-3 col-md-6" data-aos="zoom-in" data-aos-delay="500">
+            <div class="service-item">
+              <div class="img">
+                <img src="./assets/img/peluqueria.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                  <h3>Peluquería</h3>
+                <p>Corte, peinado, coloración, alisado, permanente y tratamientos capilares, como hidratación o reparación.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Featured Services Section -->
+
+    
+
+    <!-- Seccion Portafolio -->
+    <section id="portfolio" class="portfolio section light-background">
+
+      <!-- Titulo-->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Productos</h2>
+        <p>En nuestro salón de belleza ofrecemos una amplia variedad de productos de alta calidad</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+         <!-- Contenedor de la galería con filtrado y disposición tipo masonry -->
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+           <!-- Filtros para clasificar los productos -->
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Facial</li>
+            <li data-filter=".filter-product">Corporal</li>
+            <li data-filter=".filter-branding">Manicure & Peluqueria</li>
+            
+          </ul>
+
+            <!-- Contenedor de los productos -->  <!-- Contenedor de los productos -->
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+              <!-- Producto 1: Mascarillas (categoría Facial) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="./assets/img/masonry-portfolio/mascarillas.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Mascarillas</h4>
+                <p> Mascarilla facial de cuidado intensivo que limpia, hidrata y revitaliza la piel.</p>
+                <a href="./assets/img/masonry-portfolio/kit facial.jpg" title="Kits" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              
+              </div>
+            </div><!-- End Portfolio Item -->
+
+             <!-- Producto 2: Aceites (categoría Corporal) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="./assets/img/masonry-portfolio/aceite.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Aceites</h4>
+                <p>Hidrata y suaviza la piel, dejándola sedosa y con un brillo natural, ideal para todo tipo de piel.</p>
+                <a href="./assets/img/masonry-portfolio/kit facial.jpg" title="Kits" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- Producto 3: Fortalecedor de uñas (categoría Manicure & Peluquería) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="./assets/img/masonry-portfolio/endurecedor.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Fortalecedor</h4>
+                <p>Nutre y protege, ayudando a prevenir la rotura y a mejorar la apariencia de las uñas débiles.</p>
+                <a href="./assets/img/masonry-portfolio/endurecedor.jpg" title="Fortalecedor" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              
+              </div>
+            </div><!-- End Portfolio Item -->
+
+             <!-- Producto 4: Hidratante para cutículas -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="./assets/img/masonry-portfolio/hidratante .jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Hidratante curticula</h4>
+                <p>Nutre y suaviza la piel alrededor de las uñas, ayudando a prevenir la resequedad y las irritaciones.</p>
+                <a href="./assets/img/masonry-portfolio/hidratante .jpg" title="Hidratante curticula" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+
+             <!-- Producto 5: Kit capilar -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="./assets/img/masonry-portfolio/kit capilar.jpg.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Kit capilar</h4>
+                <p>Revitalizar, hidratar y fortalecer el cabello. Con productos esenciales para una rutina de cuidado efectiva, este kit deja tu melena suave, brillante y saludable.</p>
+                <a href="./assets/img/masonry-portfolio/kit facial.jpg" title="Kits" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                
+              </div>
+            </div><!-- End Portfolio Item -->
+            
+            <!-- Producto 6: Kit facial -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="./assets/img/masonry-portfolio/kit facial.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Kits</h4>
+                <p>kits de cuidado diario de la piel. Contiene productos esenciales que limpian, hidratan y revitalizan.</p>
+                <a href="./assets/img/masonry-portfolio/kit facial.jpg" title="Kits" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="./assets/img/masonry-portfolio/bloqueador.jpg.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Bloqueadores</h4>
+                <p>Protectores solares de amplio espectro que protege la piel de los rayos UVA/UVB</p>
+                <a href="./assets/img/masonry-portfolio/bloqueador.jpg.webp" title="Bloqueadores" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="./assets/img/masonry-portfolio/exfoliante.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Exfoliante</h4>
+                <p>Elimina suavemente las células muertas de la piel, dejando tu cuerpo suave, renovado y con una textura uniforme.</p>
+                <a href="./assets/img/masonry-portfolio/exfoliante.jpg" title="Exfoliante" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="./assets/img/masonry-portfolio/piedra pomes.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Piedra pómez</h4>
+                <p>Su textura abrasiva elimina las células muertas y callosidades, dejando la piel suave y renovada.</p>
+                <a href="./assets/img/masonry-portfolio/piedra pomes.jpg" title="Piedra pomes" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <img src="./assets/img/masonry-portfolio/hidratantes.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Hidratantes</h4>
+                <p>Mantienela la piel suave, fresca y nutrida durante todo el día</p>
+                <a href="./assets/img/masonry-portfolio/hidratantes.jpg" title="Hidratantes" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <img src="./assets/img/masonry-portfolio/cremas.jpg.webp" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Crema</h4>
+                <p>Crema corporal nutritiva que hidrata y suaviza la piel al instante</p>
+                <a href="./assets/img/masonry-portfolio/cremas.jpg.webp" title="Crema" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="./assets/img/masonry-portfolio/tintes.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Tintes</h4>
+                <p>Productos que se utilizan para cambiar o realzar el color del cabello, disponibles en versiones permanentes, semipermanentes o temporales.</p>
+                <a href="./assets/img/masonry-portfolio/tintes.jpg" title="Tintes" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <img src="./assets/img/masonry-portfolio/ole capilar.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Oleó capilar</h4>
+                <p>Hidrata, fortalece y da brillo al cabello, dejándolo suave y saludable</p>
+                <a href="./assets/img/masonry-portfolio/ole capilar.jpg" title="Ole capilar" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+               
+              </div>
+            </div><!-- End Portfolio Item -->
+        
+
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+    <!-- Team Seccion -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>Nuestro Equipo</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Informacion de los integrantes-->
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="./assets/img/masonry-portfolio/Erick.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Erick Restrepo</h4>
+                <span>Acesor</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="./assets/img/masonry-portfolio/Diana.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Diana Cardenas</h4>
+                <span>Cosmetologa</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="./assets/img/masonry-portfolio/Sirley.jpg" class="img-fluid" alt="">
+                <div class="social">
+                 
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                 
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sirley Cruz</h4>
+                <span>Estilista</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="./assets/img/masonry-portfolio/diego.jpg" class="img-fluid" alt="">
+                <div class="social">
+                 
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Diego Gomez</h4>
+                <span>Barbero</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contactos</h2>
+        <p>¡Tu opinión es muy importante para nosotros!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 ">
+            <div class="row gy-4">
+
+              <div class="col-lg-12">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Ubicacion</h3>
+                  <p>Puerto Salgar, Cundinamarca</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Telefono</h3>
+                  <p>+57 3136636074</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="col-md-6">
+                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email</h3>
+                  <p>crissnails@gmail.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+          </div>
+
+          <!-- Seccion formulario de opiniones  -->
+          <div class="col-lg-6">
+            <form onsubmit="enviarPorWhatsApp(event)" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+              <div class="row gy-4">
+            
+                <div class="col-md-6">
+                  <input type="text" id="nombre" name="name" class="form-control" placeholder="Nombre" required>
+                </div>
+            
+                <div class="col-md-6">
+                  <input type="tel" id="telefono" name="tel" class="form-control"placeholder="+57 000-000-0000"
+                  onkeypress="return valideKey(event)" >
+                </div>
+            
+                <div class="col-md-12">
+                  <input type="email" id="correo" name="email" class="form-control" placeholder="Correo" required>
+                </div>
+            
+                <div class="col-md-12">
+                  <textarea id="mensaje" name="message" class="form-control" rows="4" placeholder="Mensaje" required></textarea>
+                </div>
+            
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
+            
+                  <button type="submit">Enviar</button>
+                </div>
+            
+              </div>
+            </form>
+            
+            <script>
+                // Función que se ejecuta al enviar el formulario por WhatsApp
+              function enviarPorWhatsApp(event) {
+                event.preventDefault(); // Evita que el formulario se envíe de manera tradicional (recargar la página)
+
+                // Obtener el valor del campo "nombre" del formulario
+                const nombre = document.getElementById("nombre").value;
+                // Obtener el valor del campo "teléfono"
+                const telefono = document.getElementById("telefono").value;
+                // Obtener el valor del campo "correo electrónico"
+                const correo = document.getElementById("correo").value;
+                // Obtener el valor del campo "mensaje"
+                const mensaje = document.getElementById("mensaje").value;
+                
+                // Número de WhatsApp al que se enviará el mensaje (debe incluir el código de país, en este caso Colombia: +57)
+                const numeroWhatsApp = "573136636074"; // Tu número de WhatsApp con código país
+                const texto = `Hola! Mi nombre es ${nombre}, mi número es ${telefono}, mi correo es ${correo}, y quiero decir lo siguiente: ${mensaje}`;
+                const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+                 // Abrir la URL de WhatsApp en una nueva pestaña
+                window.open(url, "_blank");
+              }
+            </script>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  <!-- Inicio del pie de página -->
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+       <!-- Nombre del sitio o marca -->
+      <h3 class="sitename">Criss Nails</h3>
+      <p>Nuestras redes</p>
+       <!-- Enlace a redes sociales con ícono de Instagram -->
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.instagram.com/criss.nails_spa?igsh=dXZnbWVocm81ejd0"><i class="bi bi-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón para volver al principio de la página -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader --><!-- Preloader: se puede usar para mostrar una animación de carga mientras se cargan los recursos de la página -->
+  <div id="preloader"></div>
+
+  <!-- Archivos JavaScript de librerías de terceros (vendor) -->
+   <!-- Bootstrap Bundle: incluye funcionalidades de Bootstrap como sliders, modales, etc. -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Validación de formularios en PHP (probablemente no se usa en este código directamente, pero está cargado) -->
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- AOS (Animate On Scroll): para animaciones al hacer scroll -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <!-- Glightbox: para mostrar imágenes en un modal tipo galería -->
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <!-- Swiper: carrusel responsivo para sliders de contenido -->
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- ImagesLoaded: asegura que todas las imágenes estén cargadas antes de realizar ciertas acciones -->
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <!-- Isotope: para filtrado y organización de elementos tipo grid (como en la sección de portafolio) -->
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+ <!-- Archivo JavaScript principal de tu proyecto, contiene configuraciones y funciones personalizadas -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
